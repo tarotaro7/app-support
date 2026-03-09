@@ -4,126 +4,326 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>腹筋を割ろう - サポート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #FAFAFA;
+            --surface: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --accent: #E8553D;
+            --accent-light: #FEF2F0;
+            --border: #F0F0F0;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --radius: 12px;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
-            background: #FFF8F0;
-            color: #32281E;
-            line-height: 1.8;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
+
+        /* Header */
         .header {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            color: white;
+            padding: 64px 24px 48px;
             text-align: center;
-            margin-bottom: 48px;
+        }
+        .header-brand {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 20px;
+        }
+        .header-brand a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .header-brand a:hover {
+            color: rgba(255,255,255,0.7);
+        }
+        .header-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent), #D44429);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 6px 20px rgba(232,85,61,0.4);
+        }
+        .header-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
         }
         .header h1 {
             font-size: 28px;
             font-weight: 800;
-            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
         }
         .header p {
-            color: #C8785F;
-            font-size: 16px;
-        }
-        .section {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .section h2 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            color: #C8785F;
-        }
-        .section p, .section li {
             font-size: 15px;
-            color: #5A4A3E;
+            color: rgba(255,255,255,0.5);
         }
-        .section ul {
-            padding-left: 20px;
-            margin-top: 8px;
+
+        /* Content */
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
         }
-        .section li {
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .contact-card h2 {
+            font-size: 18px;
+            font-weight: 700;
             margin-bottom: 8px;
         }
-        a {
-            color: #C8785F;
+        .contact-card > p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
             text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-email {
-            display: inline-block;
-            background: #FFF0E8;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
-            margin-top: 12px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            transition: background 0.15s ease, transform 0.15s ease;
+            box-shadow: 0 2px 8px rgba(232,85,61,0.25);
         }
+        .contact-btn:hover {
+            background: #D44429;
+            transform: translateY(-1px);
+        }
+        .contact-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+        .contact-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 14px;
+        }
+
+        /* Section */
+        .section {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+        .section h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section h2 .icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .section h2 .icon svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--accent);
+        }
+        .section p, .section li {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* FAQ */
+        .faq-item {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+        .faq-q {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 48px;
-            color: #A08878;
-            font-size: 13px;
+            padding: 24px;
         }
-        .footer a {
-            color: #A08878;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .footer-links a:hover {
+            color: var(--text-secondary);
+        }
+        .footer-copy {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 48px 24px 36px; }
+            .header h1 { font-size: 24px; }
+            .content { padding: 24px 16px 60px; }
+            .section, .contact-card { padding: 28px 20px; }
+            .feature-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>腹筋を割ろう</h1>
-            <p>科学的ダイエット管理アプリ</p>
+    <div class="header">
+        <div class="header-brand"><a href="../">okawariCookie</a></div>
+        <div class="header-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
         </div>
+        <h1>腹筋を割ろう</h1>
+        <p>科学的ダイエット管理アプリ</p>
+    </div>
 
-        <div class="section">
+    <div class="content">
+        <div class="contact-card">
             <h2>お問い合わせ</h2>
-            <p>アプリに関するご質問、不具合の報告、ご要望などがございましたら、以下のメールアドレスまでお気軽にお問い合わせください。</p>
-            <div class="contact-email">
-                <a href="mailto:okawaricookie@gmail.com">okawaricookie@gmail.com</a>
+            <p>ご質問・不具合の報告・ご要望など、お気軽にご連絡ください。</p>
+            <a href="mailto:okawaricookie@gmail.com" class="contact-btn">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                okawaricookie@gmail.com
+            </a>
+            <p class="contact-note">通常2〜3営業日以内にご返信いたします</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg></span>
+                よくあるご質問
+            </h2>
+            <ul>
+                <li class="faq-item">
+                    <div class="faq-q">データが同期されません</div>
+                    <div class="faq-a">iCloudがオンになっているかご確認ください。設定 → Apple ID → iCloud で確認できます。</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-q">食品が見つかりません</div>
+                    <div class="faq-a">手入力機能で自由に食品を追加できます。食事画面の「手入力」タブをご利用ください。</div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-q">サブスクリプションの解約方法</div>
+                    <div class="faq-a">設定 → Apple ID → サブスクリプション から管理できます。</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>
+                <span class="icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
+                アプリの特徴
+            </h2>
+            <div class="feature-grid">
+                <div class="feature-item"><span class="feature-dot"></span>23,000品目の食品データベース</div>
+                <div class="feature-item"><span class="feature-dot"></span>PFCバランスの自動管理</div>
+                <div class="feature-item"><span class="feature-dot"></span>6人のAIコーチ</div>
+                <div class="feature-item"><span class="feature-dot"></span>HIIT・筋トレ・有酸素記録</div>
+                <div class="feature-item"><span class="feature-dot"></span>統計予測による体重管理</div>
+                <div class="feature-item"><span class="feature-dot"></span>2,847件の科学論文ベース</div>
             </div>
-            <p style="margin-top: 16px; font-size: 13px; color: #A08878;">※ 通常2〜3営業日以内にご返信いたします。</p>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>よくあるご質問</h2>
-            <ul>
-                <li><strong>データが同期されません</strong><br>
-                    iCloudがオンになっているかご確認ください。設定 → Apple ID → iCloud で確認できます。</li>
-                <li><strong>食品が見つかりません</strong><br>
-                    手入力機能で自由に食品を追加できます。食事画面の「手入力」タブをご利用ください。</li>
-                <li><strong>サブスクリプションの解約方法</strong><br>
-                    設定 → Apple ID → サブスクリプション から管理できます。</li>
-            </ul>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="privacy.html">プライバシーポリシー</a>
+            <a href="../">全アプリ一覧</a>
         </div>
-
-        <div class="section">
-            <h2>アプリについて</h2>
-            <p>「腹筋を割ろう」は、2,847件の科学論文を分析して作られた本格的なダイエット・ボディメイク管理アプリです。</p>
-            <ul>
-                <li>23,000品目以上の食品データベース</li>
-                <li>PFC（タンパク質・脂質・炭水化物）バランスの自動管理</li>
-                <li>6人のAIコーチによるパーソナルアドバイス</li>
-                <li>HIIT・筋トレ・有酸素運動の記録と習慣化</li>
-                <li>移動平均と統計予測による体重管理</li>
-            </ul>
-        </div>
-
-        <div class="footer">
-            <p><a href="privacy.html">プライバシーポリシー</a> | <a href="../">全アプリ一覧</a></p>
-            <p style="margin-top: 8px;">&copy; 2025 okawariCookie. All rights reserved.</p>
-        </div>
+        <p class="footer-copy">&copy; 2026 okawariCookie. All rights reserved.</p>
     </div>
 </body>
 </html>
