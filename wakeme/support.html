@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サポート - WakeMe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --surface: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --accent: #E8553D;
+            --accent-light: #FEF2F0;
+            --border: #F0F0F0;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            color: white;
+            padding: 56px 24px 44px;
+            text-align: center;
+        }
+        .header-brand {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 16px;
+        }
+        .header-brand a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
+        }
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+        .section {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+        .section h2 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h2 .num {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--accent);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .section p, .section li {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .section ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+        .section li {
+            padding: 6px 0 6px 16px;
+            position: relative;
+        }
+        .section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .highlight {
+            background: var(--accent-light);
+            border: 1px solid #F5D0CA;
+        }
+        .footer {
+            text-align: center;
+            padding: 24px;
+        }
+        .footer-copy {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        a { color: inherit; }
+        @media (max-width: 600px) {
+            .header { padding: 44px 24px 36px; }
+            .header h1 { font-size: 22px; }
+            .content { padding: 24px 16px 60px; }
+            .section { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-brand"><a href="../">okawariCookie</a> / WakeMe</div>
+        <h1>サポート</h1>
+    </div>
+
+    <div class="content">
+        <div class="section highlight">
+            <h2><span class="num">1</span>お問い合わせ先</h2>
+            <p>WakeMe に関するご質問、不具合報告、ご要望は以下のメールアドレスまでお送りください。</p>
+            <p><a href="mailto:okawaricookie@gmail.com">okawaricookie@gmail.com</a></p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">2</span>ご連絡時にあると助かる情報</h2>
+            <ul>
+                <li>使用している iPhone / iPad の機種名</li>
+                <li>iOS のバージョン</li>
+                <li>WakeMe のバージョン</li>
+                <li>発生している問題やご要望の内容</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">3</span>対応について</h2>
+            <p>サポートはメールで対応しています。電話サポートやチャットサポートは提供していません。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-copy">&copy; 2026 okawariCookie. All rights reserved.</p>
+    </div>
+</body>
+</html>
